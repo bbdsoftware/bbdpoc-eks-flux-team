@@ -4,16 +4,16 @@ kind: Deployment
 metadata:
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.podinfod: semver:~1.4
-  name: podinfo
-  namespace: team1
+    flux.weave.works/tag.podinfod: semver:~1.7
+  name: frontend
+  namespace: bbdpoc-eks-flux-team
 spec:
   template:
     spec:
       $setElementOrder/containers:
       - name: podinfod
       containers:
-      - image: quay.io/stefanprodan/podinfo:1.4.4
+      - image: quay.io/stefanprodan/podinfo:1.7.0
         name: podinfod
 ---
 apiVersion: apps/v1
@@ -21,14 +21,14 @@ kind: Deployment
 metadata:
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.podinfod: semver:~1.6
-  name: podinfov2
-  namespace: team1
+    flux.weave.works/tag.podinfod: semver:~1.7
+  name: backend
+  namespace: bbdpoc-eks-flux-team
 spec:
   template:
     spec:
       $setElementOrder/containers:
       - name: podinfod
       containers:
-      - image: quay.io/stefanprodan/podinfo:1.6.1
+      - image: quay.io/stefanprodan/podinfo:1.7.0
         name: podinfod
