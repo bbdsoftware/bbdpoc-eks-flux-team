@@ -1,4 +1,4 @@
-namespace: team1
+namespace: bbdpoc-eks-flux-team
 bases:
   - ./workloads/frontend/
   - ./workloads/backend/
